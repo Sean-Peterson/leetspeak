@@ -13,8 +13,10 @@
                     $push_letter = '0';
                 } elseif ($character == 'I') {
                     $push_letter = '1';
-                } elseif (($character == 's' || $character == 'S') && $exploded[$key - 1] != " ") {
-                    $push_letter = 'z';
+                } elseif ($key != 0){
+                    if (($character == 's' || $character == 'S') && ($exploded[$key - 1] != " ")) {
+                        $push_letter = 'z';
+                    }
                 }
                 array_push($newWord, $push_letter);
             }
